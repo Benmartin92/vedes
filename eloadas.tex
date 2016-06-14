@@ -34,7 +34,10 @@
 \begin{frame}
 \frametitle{Célkitűzés (Section 1)}
 \justifying
-A szakdolgozat célja, hogy bevezetést nyújtson a Banach-tér értékű függvények integrálelméletébe és általánosítson olyan mértékelméleti fogalmakat, amelyeket már valósértékű függvények esetén megismertünk.
+\begin{itemize}
+\item bevezető a Banach-tér értékű integrálelméletbe
+\pause \item meglévő mértékelméleti fogalmak általánosítása
+\end{itemize}
 \pause \begin{megall}
 A továbbiakban $\mathcal{X}$ egy Banach-teret és $(\Omega, \mathcal{A}, \mu)$ egy véges mértékteret jelöl. Az $\mathcal{X}^*$ az $\mathcal{X}$ duális terét jelöli és egy elemére $x^*$-al hivatkozunk.
 \end{megall}
@@ -54,9 +57,8 @@ Banach-tér értékű függvény alatt egy  $f \colon \Omega \to \mathcal{X}$ f�
 \end{frame}
 
 \begin{frame}
-A valósértékű egyszerű függvények természetes módon adódó általánosítása:
-$$f(\omega) = \sum^k_{i=1} \chi_{A_i}(\omega)x_i \quad (x_i \in \mathcal{X}),$$
-\pause ahol $A_i$ véges mértékű, páronként diszjunkt halmazok és $k \in \mathbb{N}$.
+Egyszerű függvények:
+$$f(\omega) = \sum^k_{i=1} \chi_{A_i}(\omega)x_i \quad (x_i \in \mathcal{X}).$$
 \pause \begin{defi}[erős mérhetőség] Egy $f \colon \Omega \to \mathcal{X}$ függvény erősen mérhető, ha létezik $(f_n)_{n \in \mathbb{N}}$ egyszerű függvényeknek olyan sorozata, hogy $f_n(\omega) \to f(\omega)$ $\mu$-majdnem minden $\omega \in \Omega$-ra.
 \end{defi}
 \pause\begin{defi}[gyenge mérhetőség] Egy $f \colon \Omega \to \mathcal{X}$ gyengén mérhető, ha bármely $x^* \in \mathcal{X}^*$ folytonos lineáris funkcionálra az $\omega \mapsto x^*(f(\omega))$ függvény mérhető.
@@ -65,14 +67,19 @@ $$f(\omega) = \sum^k_{i=1} \chi_{A_i}(\omega)x_i \quad (x_i \in \mathcal{X}),$$
 
 \begin{frame}
 \justifying
-A definíciók és az elnevezések jók abban az értelemben, hogy egyrészt \textit{egy erősen mérhető függvény gyengén is mérhető} (Corollary 2.10), \pause másrészt \textit{létezik gyengén, de erősen nem mérhető függvény} (Example 2.16). Ezen állítások az alábbi tétel következményei:
-\pause \begin{theo}[Pettis mérhetőségi tétele, Theorem 2.9] Legyen $(\Omega,\mathcal{A},\mu)$ egy $\sigma$-véges mértéktér. Egy $f \colon \Omega \to \mathcal{X}$ függvény pontosan akkor erősen mérhető, ha:
+\begin{itemize}
+\item a definíciók és az elnevezések jók
+\end{itemize}
+\pause 
+\begin{theo}[Pettis mérhetőségi tétele, Theorem 2.9] Legyen $(\Omega,\mathcal{A},\mu)$ egy $\sigma$-véges mértéktér. Egy $f \colon \Omega \to \mathcal{X}$ függvény pontosan akkor erősen mérhető, ha:
 
 a) gyengén mérhető és
 
 b) majdnem mindenütt szeparábilis értékkészletű.
 \end{theo}
-\pause További említésre méltó következmény, hogy \textit{szeparábilis terekben a két mérhetőségi fogalom ugyanazt jelenti} (Corollary 2.11).
+\begin{itemize}
+\pause \item szeparábilis terekben ugyanazt jelentik
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -97,13 +104,13 @@ $$\int_{\Omega} f \dd{\mu} := \lim_{n \to \infty} \int_{\Omega} f_n \dd{\mu}.$$
 
 \begin{frame}
 \justifying
-Az alábbi szükséges és elégséges feltételt sokszor használjuk.
 \begin{theo}[Bochner, Theorem 3.4] Egy erősen mérhető $f \colon \Omega \to \mathcal{X}$ függvény pontosan akkor Bochner-integrálható, ha
 $$\int_{\Omega} \| f(\omega) \| \dd{\mu} < \infty.$$
 \end{theo}
-\pause Teljesülnek az olyan jó tulajdonságok, mint (Proposition 3.5):
-$$\left \| \int_{\Omega} f \dd{\mu} \right\| \leqslant \int_{\Omega} \| f(\omega) \| \dd{\mu},$$
-\pause vagy az, hogy a $\nu_f(A) := \int_{A} f \dd{\mu}$ határozatlan Bochner-integrál $\sigma$-additív (Proposition 3.7).
+\begin{itemize}
+\pause \item $\left \| \int_{\Omega} f \dd{\mu} \right\| \leqslant \int_{\Omega} \| f(\omega) \| \dd{\mu}$
+\pause \item $\nu_f(A) := \int_{A} f \dd{\mu}$ $\sigma$-additív.
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -111,9 +118,12 @@ $$\left \| \int_{\Omega} f \dd{\mu} \right\| \leqslant \int_{\Omega} \| f(\omega
 \begin{theo}[Hille, Theorem 3.13] Legyen $\mathcal{X}_1$ és $\mathcal{X}_2$ két Banach-tér, valamint $L \colon \mathcal{X}_1 \to \mathcal{X}_2$ egy zárt lineáris operátor. Ha $f \colon \Omega \to \dom L$ és $L(f(\omega))$ függvények Bochner-integrálhatóak, akkor
 $$L\left(\int_{\Omega} f \dd{\mu} \right) = \int_{\Omega} L(f(\omega)) \dd{\mu}.$$
 \end{theo}
-\pause Ennek egy fontos következménye, \textit{hogy ha az összes mérhető halmazon két mérhető függvény Bochner-integrálja megegyezik, akkor a két függvény majdnem mindenütt egyenlő} (Corollary 3.15). \pause Emiatt bevezethető a Bochner-tér fogalma, ami az $L^p$ terek általánosítása.
+\begin{itemize}
+\pause \item minden $A \in \mathcal{A}$-ra: $\int_{A} f \dd{\mu} = \int_{A} g \dd{\mu} \Longrightarrow f = g$ m. m.
+\pause \item Bochner-tér
+\end{itemize}
 
-\pause Tekintsük a következő normát:
+\pause Bochner-tér normája
 
 \begin{displaymath}
  \| f \|_{L^p} := \left\{
@@ -127,7 +137,10 @@ $$L\left(\int_{\Omega} f \dd{\mu} \right) = \int_{\Omega} L(f(\omega)) \dd{\mu}.
 
 \begin{frame} 
 \justifying
-Előzőek miatt mondhatjuk, hogy $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ jelöli az olyan majdnem mindenütt megegyező függvények ekvivalenciaosztályait, amelyre az előbb bevezetett $\| f \|_{L^p}$ norma véges. \pause Bizonyítás nélkül szerepel, hogy $1 \leqslant p \leqslant \infty$ esetén $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ Banach-tér a fenti normával (Note 3.16).
+\begin{itemize}
+\item $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ függvények ekvivalenciaosztályai + norma
+\pause \item $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ valójában Banach-tér
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -136,17 +149,27 @@ Előzőek miatt mondhatjuk, hogy $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ je
 $$x^*(x) = \int_{\Omega} x^*(f(\omega))\dd{\mu}.$$
 Ekkor az $f$ Pettis-integrálja $x$.
 \end{defi}
-\pause A Bochner-integrál erősebb abban az értelemben, \textit{hogy ha $f$ erősen mérhető függvény Bochner-integrálható, akkor Pettis-integrálható is és az integrálok értékei azonosak} (Proposition 3.20). \pause Továbbá, ha $\mathcal{X}$ végtelen dimenziós, akkor mindig létezik olyan erősen mérhető függvény, amely Pettis-, de nem Bochner-integrálható (Corollary 3.29). \pause Véges dimenzióban azonban a két integrálhatóság fogalom egybeesik az erősen mérhető függvények körében (Corollary 3.30).
+\begin{itemize}
+\pause \item Bochner-integrál ''erős'', Pettis-integrál ''gyenge''
+\pause \item integrálható függvények véges és végtelen dimenzióban
+\end{itemize}
 \end{frame}
 
 \begin{frame}
 \justifying
-\pause Jó felső becslést nem tudunk adni egy Pettis-integrál normájára, \pause de szerencsére itt is igaz marad, hogy a \textit{határozatlan Pettis-integrál $\sigma$-additív} (Theorem 3.21, Pettis). \pause Sajnos a Bochner-tételhez hasonló könnyen ellenőrizhető szükséges és elégséges feltételt sem tudunk adni a Pettis-integrálhatóságra.
-\pause A Bochner-terekhez hasonlóan (Proposition 3.26 és Note 3.27) a Pettis-terek is bevezethetőek a
-\pause $$
+\begin{itemize}
+\item nincs jó becslés
+\pause \item $\sigma$-additivitás megmarad
+\pause \item nincs könnyen ellenőrizhető feltétel az integrálhatóságra
+\pause \item minden $A \in \mathcal{A}$-ra: $\int_{A} f \dd{\mu} = \int_{A} g \dd{\mu} \Longrightarrow f = g$ m. m.
+\end{itemize}
+\pause Pettis-tér = integrálható függvények ekvivalenciaosztályai + norma.
+
+\pause Norma a téren 
+$$
 \|f\|_{\mathcal{P}(\mathcal{X})} := \sup_{x^* \in \mathcal{X}^*} \int_{\Omega} | x^*(f(\omega)) | \dd{\mu}.
 $$
-norma segítségével. \pause Azonban, ha $\mu$ a Lebesgue-mérték a $[0,1]$-en, akkor semmilyen végtelen dimenziós Banach-térre sem nyerünk Banach-teret a Pettis-integrálható függvények körében a fent megadott normával.
+\pause Ez már nem mindig Banach-tér.
 \end{frame}
 
 \begin{frame}
@@ -155,9 +178,8 @@ norma segítségével. \pause Azonban, ha $\mu$ a Lebesgue-mérték a $[0,1]$-en
 \textbf{Hogyan lehet a mérték fogalmát általánosítani?}
 \pause \begin{defi}[vektormérték]Vektormértéknek egy $\sigma$-additív  $F \colon \mathcal{A} \to \mathcal{X}$ halmazfüggvényt nevezünk. Egy vektormérték abszolút folytonos $(F \ll \mu)$ a $\mu$ mértékre nézve, ha teljesül a következő: ha egy $A \in \mathcal{A}$ halmazra $\mu(A) = 0$, akkor $F(A)=0$ is teljesül.
 \end{defi}
-\pause A határozatlan Bochner- és Pettis-integrál, azaz a 
+\pause A határozatlan Bochner- és Pettis-integrál:
 $$\nu_f(A) := \int_{A} f \dd{\mu} \quad (A \in \mathcal{A})$$
-\textit{halmazfüggvény mindig vektormérték} valamely $f$ Bochner- vagy Pettis-integrálható függvényre.
 \end{frame}
 
 \begin{frame}
@@ -167,7 +189,10 @@ Legyen $F\colon \mathcal{A} \to \mathcal{X}$ egy vektormérték. Ekkor $F$ vari�
 $$\sup_{\pi} \left\lbrace \sum^{m}_{j=1} \| F(A_j) \| : \bigcup^{m}_{j=1} A_j = A \text{ és } \pi := \lbrace A_1, \ldots, A_m \rbrace \text{ diszjunktak} \right\rbrace,$$
 amit $|F|(A)$-val jelölünk.
 \end{defi}
-\pause Az $F$ vektormértékről azt mondjuk, hogy korlátos változású, ha variációja véges, azaz $|F|(\Omega) < \infty.$ \pause Belátjuk, hogy $|F|$ egy mérték (Proposition 4.4), \pause amely nyilvánvalóan véges, ha $F$ korlátos változású.
+\begin{itemize}
+\pause \item korlátos változású, ha $|F|(\Omega) < \infty$
+\pause \item $|F|$ mérték
+\end{itemize}
 \pause \begin{allitas}[Proposition 4.6] Legyen $f \colon \Omega \to \mathcal{X}$ egy Bochner-integrálható függvény és $F$ az $f$ által generált vektormérték (azaz $\nu_f$, a határozatlan Bochner-integrál). Ekkor 
 $$|F|(A) = \int_{A} \| f(\omega) \| \dd{\mu} \quad (A \in \mathcal{A}).$$
 \end{allitas}
@@ -181,8 +206,7 @@ $$|F|(A) = \int_{A} \| f(\omega) \| \dd{\mu} \quad (A \in \mathcal{A}).$$
 $$|F|(A) = \int_{A} g \dd{\mu} \quad (A \in \mathcal{A}).$$ \pause Ha $F(A) = \int_{A} f \dd{|F|}$ valamilyen Bochner-integrálható $f$ függvényre, akkor
 \pause $$\int_{A} f \frac{\dd{|F|}}{\dd{\mu}} \dd{\mu} = \int_{A} f \dd{|F|} = F(A).$$
 \pause Tehát 
-$$\int_{A} fg \dd{\mu} = F(A),$$
-\pause azaz reprezentáltuk a vektormértékünket egy Bochner-integrálható függvénnyel. \pause Az utolsó részben azt vizsgáljuk, hogy mikor tudjuk ezt megtenni, azaz mikor létezik a szóban forgó $f$ függvény?
+$$\int_{A} fg \dd{\mu} = F(A).$$
 \end{frame}
 
 \begin{frame}
@@ -196,22 +220,25 @@ $$\int_{A} f \dd{\mu} = F(A) \quad (A \in \mathcal{A}).$$
 
 \begin{frame}
 \justifying
-A Radon\---Nikodym tétel átfogalmazása általánosan \textbf{nem} igaz. \pause Ezért van értelme Radon\---Nikodym tulajdonságról beszélni. \pause Azt mondjuk, hogy az $\mathcal{X}$ tér rendelkezik a Radon\---Nikodym tulajdonsággal az $(\Omega,\mathcal{A},\mu)$ véges mértéktérre nézve, hogy ha bármely abszolút folytonos $(F \ll \mu)$ és korlátos változású $F\colon \mathcal{A} \to \mathcal{X}$ vektormértékhez található egy olyan Bochner-integrálható $f$ függvény, hogy az alábbi teljesül:
-$$\int_{A} f \dd{\mu} = F(A) \quad (A \in \mathcal{A}).$$
-
-\pause Ez azt jelenti, hogy a Radon\---Nikodym tétel átfogalmazása igaz lesz az $\mathcal{X}$ téren.
+\begin{itemize}
+\item Radon\---Nikodym tétel átfogalmazása általánosan \textbf{nem} igaz
+\pause \item Radon\---Nikodym tulajdonság
+\end{itemize}
 \pause \begin{defi}[Riesz reprezentálható operátor] Egy $T \colon L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ operátor (Riesz) reprezentálható, hogy ha létezik egy olyan $f\colon \Omega \to \mathcal{X}$ lényegében korlátos Bochner integrálható függvény, hogy
 $$T(f) = \int_{\Omega} fg \dd{\mu} \quad(f \in L^1(\Omega, \mathcal{A}, \mu))$$
 \end{defi}
+\begin{itemize}
+\item Radon\---Nikodym tulajdonság kapcsolata $L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ típusú folytonos operátorokkal
+\end{itemize}
 \end{frame}
 \begin{frame}
 \justifying
-Megmutatjuk, hogy Radon\---Nikodym tulajdonság szoros kapcsolatban áll az $L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ típusú folytonos operátorok Riesz reprezentálhatóságával. \pause Nevezetesen, igaz az alábbi:
 \begin{theo}[Theorem 5.2] Legyen $\mathcal{X}$ és $(\Omega, \mathcal{A}, \mu)$ egy véges mértéktér. Ekkor $\mathcal{X}$ Radon\---Nikodym tulajdonságú a $(\Omega, \mathcal{A}, \mu)$ mértéktérre nézve akkor és csak akkor, ha bármely folytonos $L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ típusú operátor reprezentálható.
 \end{theo}
-\pause Az utolsó részben (Section 5.2) példaként \textit{megmutatjuk a $c_0$ térről, hogy nem rendelkezik a Radon\---Nikodym tulajdonsággal} \pause és demonstrálva a fenti tétellel való kapcsolatot \textit{mutatunk egy $L^1(\Omega, \mathcal{A}, \mu) \to c_0$ folytonos, de nem Riesz reprezentálható operátort} is.
-
-\pause Végezetül megmutatjuk, hogy \textit{minden Hilbert-tér rendelkezik a Radon\---Nikodym tulajdonsággal}, \pause amely az erősebb Dunford\---Pettis tétel speciális esete, miszerint ha $\mathcal{X}$ szeparábilis duális tér (azaz $\mathcal{X} = \mathcal{Y}^*$, ahol $\mathcal{Y}$ valamilyen Banach-tér), akkor $\mathcal{X}$ rendelkezik a Radon\---Nikodym tulajdonsággal.
+\begin{itemize}
+\pause \item $c_0$ nem Radon\---Nikodym tulajdonságú
+\pause \item Hilbert-terek igen (Dunford-Pettis tétel következménye)
+\end{itemize}
 \end{frame}
 \begin{frame}
 \center
