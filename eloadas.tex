@@ -95,9 +95,9 @@ b) majdnem mindenütt szeparábilis értékkészletű.
 \justifying
 \begin{defi}[Bochner-integrál] Legyen $f \colon \Omega \to \mathcal{X}$ egy $f(\omega) = \sum^{k}_{i=1} \chi_{A_i}(\omega) x_i$ alakú egyszerű függvény. Ekkor $f$ Bochner-integrálja $\Omega$-n a $\mu$ mérték szerint:
 $$\int_{\Omega} f \dd{\mu} := \sum^{k}_{i=1} \mu(A_i) x_i.$$
-Ha $f \colon \Omega \to \mathcal{X}$ egy tetszőleges erősen mérhető függvény és $(f_n)_{n \in \mathbb{N}}$ egy hozzá $\mu$-majdnem minden pontban konvergáló egyszerű függvénysorozat, amely teljesíti a következő feltételt:
+\pause Ha $f \colon \Omega \to \mathcal{X}$ egy tetszőleges erősen mérhető függvény és $(f_n)_{n \in \mathbb{N}}$ egy hozzá $\mu$-majdnem minden pontban konvergáló egyszerű függvénysorozat, amely teljesíti a következő feltételt:
 $$\lim_{n \to \infty}\int_{\Omega} \| f_n(\omega) - f(\omega) \| \dd{\mu} = 0,$$
-akkor $f$ Bochner-integrálja az $\Omega$ halmazon a $\mu$ mérték szerint:
+\pause akkor $f$ Bochner-integrálja az $\Omega$ halmazon a $\mu$ mérték szerint:
 $$\int_{\Omega} f \dd{\mu} := \lim_{n \to \infty} \int_{\Omega} f_n \dd{\mu}.$$
 \end{defi}
 \end{frame}
@@ -109,7 +109,7 @@ $$\int_{\Omega} \| f(\omega) \| \dd{\mu} < \infty.$$
 \end{theo}
 \begin{itemize}
 \pause \item $\left \| \int_{\Omega} f \dd{\mu} \right\| \leqslant \int_{\Omega} \| f(\omega) \| \dd{\mu}$
-\pause \item $\nu_f(A) := \int_{A} f \dd{\mu}$ $\sigma$-additív.
+\pause \item $\nu_f(A) := \int_{A} f \dd{\mu}$ $\sigma$-additív
 \end{itemize}
 \end{frame}
 
@@ -120,7 +120,7 @@ $$L\left(\int_{\Omega} f \dd{\mu} \right) = \int_{\Omega} L(f(\omega)) \dd{\mu}.
 \end{theo}
 \begin{itemize}
 \pause \item minden $A \in \mathcal{A}$-ra: $\int_{A} f \dd{\mu} = \int_{A} g \dd{\mu} \Longrightarrow f = g$ m. m.
-\pause \item Bochner-tér
+\pause \item Bochner-tér = ekvivalenciaosztályok + norma. Jel.: $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$
 \end{itemize}
 
 \pause Bochner-tér normája
@@ -133,19 +133,12 @@ $$L\left(\int_{\Omega} f \dd{\mu} \right) = \int_{\Omega} L(f(\omega)) \dd{\mu}.
     \end{array}
   \right.
 \end{displaymath}
-\end{frame}
-
-\begin{frame} 
-\justifying
-\begin{itemize}
-\item $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ függvények ekvivalenciaosztályai + norma
-\pause \item $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ valójában Banach-tér
-\end{itemize}
+\pause $L^p(\mathcal{X}; \Omega, \mathcal{A}, \mu)$ valójában Banach-tér
 \end{frame}
 
 \begin{frame}
 \justifying
-\begin{defi}[skalárisan- és Pettis-integrálható függvény] Egy gyengén mérhető $f \colon \Omega \to \mathcal{X}$ függvény skalárisan integrálható, ha bármely $x^* \in \mathcal{X}^*$-ra az $\omega \mapsto x^*(f(\omega))$ függvény $L^1(\Omega, \mathcal{A},\mu)$-beli. Egy skalárisan integrálható $f$ függvény Pettis-integrálható, ha létezik egy $x \in \mathcal{X}$ úgy, hogy bármely $x^* \in \mathcal{X}^*$-ra
+\begin{defi}[skalárisan- és Pettis-integrálható függvény] Egy gyengén mérhető $f \colon \Omega \to \mathcal{X}$ függvény skalárisan integrálható, ha bármely $x^* \in \mathcal{X}^*$-ra az $\omega \mapsto x^*(f(\omega))$ függvény $L^1(\Omega, \mathcal{A},\mu)$-beli. \pause Egy skalárisan integrálható $f$ függvény Pettis-integrálható, ha létezik egy $x \in \mathcal{X}$ úgy, hogy bármely $x^* \in \mathcal{X}^*$-ra
 $$x^*(x) = \int_{\Omega} x^*(f(\omega))\dd{\mu}.$$
 Ekkor az $f$ Pettis-integrálja $x$.
 \end{defi}
@@ -165,7 +158,7 @@ Ekkor az $f$ Pettis-integrálja $x$.
 \end{itemize}
 \pause Pettis-tér = integrálható függvények ekvivalenciaosztályai + norma.
 
-\pause Norma a téren 
+Norma a téren 
 $$
 \|f\|_{\mathcal{P}(\mathcal{X})} := \sup_{x^* \in \mathcal{X}^*} \int_{\Omega} | x^*(f(\omega)) | \dd{\mu}.
 $$
@@ -176,7 +169,7 @@ $$
 \justifying
 \frametitle{Vektormértékek (Section 4)}
 \textbf{Hogyan lehet a mérték fogalmát általánosítani?}
-\pause \begin{defi}[vektormérték]Vektormértéknek egy $\sigma$-additív  $F \colon \mathcal{A} \to \mathcal{X}$ halmazfüggvényt nevezünk. Egy vektormérték abszolút folytonos $(F \ll \mu)$ a $\mu$ mértékre nézve, ha teljesül a következő: ha egy $A \in \mathcal{A}$ halmazra $\mu(A) = 0$, akkor $F(A)=0$ is teljesül.
+\pause \begin{defi}[vektormérték]Vektormértéknek egy $\sigma$-additív  $F \colon \mathcal{A} \to \mathcal{X}$ halmazfüggvényt nevezünk. \pause Egy vektormérték abszolút folytonos $(F \ll \mu)$ a $\mu$ mértékre nézve, ha teljesül a következő: ha egy $A \in \mathcal{A}$ halmazra $\mu(A) = 0$, akkor $F(A)=0$ is teljesül.
 \end{defi}
 \pause A határozatlan Bochner- és Pettis-integrál:
 $$\nu_f(A) := \int_{A} f \dd{\mu} \quad (A \in \mathcal{A})$$
@@ -190,8 +183,8 @@ $$\sup_{\pi} \left\lbrace \sum^{m}_{j=1} \| F(A_j) \| : \bigcup^{m}_{j=1} A_j = 
 amit $|F|(A)$-val jelölünk.
 \end{defi}
 \begin{itemize}
-\pause \item korlátos változású, ha $|F|(\Omega) < \infty$
 \pause \item $|F|$ mérték
+\pause \item korlátos változású, ha $|F|(\Omega) < \infty$
 \end{itemize}
 \pause \begin{allitas}[Proposition 4.6] Legyen $f \colon \Omega \to \mathcal{X}$ egy Bochner-integrálható függvény és $F$ az $f$ által generált vektormérték (azaz $\nu_f$, a határozatlan Bochner-integrál). Ekkor 
 $$|F|(A) = \int_{A} \| f(\omega) \| \dd{\mu} \quad (A \in \mathcal{A}).$$
@@ -202,11 +195,11 @@ $$|F|(A) = \int_{A} \| f(\omega) \| \dd{\mu} \quad (A \in \mathcal{A}).$$
 \justifying
 \begin{allitas}[Proposition 4.11] Legyen $F$ egy korlátos változású vektormérték, amely abszolút folytonos a $\mu$ mértékre nézve. Ekkor $|F|$ is abszolút folytonos $\mu$-re nézve.
 \end{allitas}
-\pause Ezért használhatjuk a Radon\---Nikodym tételt és rögtön kapjuk, hogy van olyan $g \colon \Omega \to [0,\infty]$ mérhető függvény, hogy
-$$|F|(A) = \int_{A} g \dd{\mu} \quad (A \in \mathcal{A}).$$ \pause Ha $F(A) = \int_{A} f \dd{|F|}$ valamilyen Bochner-integrálható $f$ függvényre, akkor
-\pause $$\int_{A} f \frac{\dd{|F|}}{\dd{\mu}} \dd{\mu} = \int_{A} f \dd{|F|} = F(A).$$
-\pause Tehát 
-$$\int_{A} fg \dd{\mu} = F(A).$$
+%\pause Ezért használhatjuk a Radon\---Nikodym tételt és rögtön kapjuk, hogy van olyan $g \colon \Omega \to [0,\infty]$ mérhető függvény, hogy
+%$$|F|(A) = \int_{A} g \dd{\mu} \quad (A \in \mathcal{A}).$$ \pause Ha $F(A) = \int_{A} f \dd{|F|}$ valamilyen Bochner-integrálható $f$ függvényre, akkor
+%\pause $$\int_{A} f \frac{\dd{|F|}}{\dd{\mu}} \dd{\mu} = \int_{A} f \dd{|F|} = F(A).$$
+%\pause Tehát 
+%$$\int_{A} fg \dd{\mu} = F(A).$$
 \end{frame}
 
 \begin{frame}
@@ -228,7 +221,7 @@ $$\int_{A} f \dd{\mu} = F(A) \quad (A \in \mathcal{A}).$$
 $$T(f) = \int_{\Omega} fg \dd{\mu} \quad(f \in L^1(\Omega, \mathcal{A}, \mu))$$
 \end{defi}
 \begin{itemize}
-\item Radon\---Nikodym tulajdonság kapcsolata $L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ típusú folytonos operátorokkal
+\pause \item Radon\---Nikodym tulajdonság kapcsolata $L^1(\Omega, \mathcal{A}, \mu) \to \mathcal{X}$ típusú folytonos operátorokkal
 \end{itemize}
 \end{frame}
 \begin{frame}
